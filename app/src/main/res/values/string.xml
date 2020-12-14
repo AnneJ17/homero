@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="type_array">
+        <item>Landlord</item>
+        <item>Property-Man</item>
+        <item>Tenant</item>
+        <item>Vendor</item>
+    </string-array>
+
+    <string-array name="status_array">
+        <item>Owned</item>
+        <item>Under Contract</item>
+        <item>Interested in buying</item>
+    </string-array>
+
+</resources>

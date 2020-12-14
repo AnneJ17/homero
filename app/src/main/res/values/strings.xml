@@ -6,4 +6,7 @@
     <string name="button_signin">Sign In</string>
     <string name="signin_label">or sign in with</string>
     <string name="signup_label">Don\'t have an account? Signup</string>
+    <string name="register_label">Create your account</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="button_signup">Signup</string>
 </resources>
