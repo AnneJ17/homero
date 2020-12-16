@@ -9,4 +9,16 @@
     <string name="register_label">Create your account</string>
     <string name="hint_confirm_password">Confirm Password</string>
     <string name="button_signup">Signup</string>
+    <string name="menu_properties">Properties</string>
+    <string name="menu_tenants">Tenants</string>
+    <string name="menu_transactions">Transactions</string>
+    <string name="menu_rent">Collect Rent</string>
+    <string name="menu_todo">To-Do</string>
+    <string name="menu_trips">Trips</string>
+    <string name="menu_doc">Documents</string>
+    <string name="menu_vendors">Vendors</string>
+    <string name="menu_logout">Logout</string>
+    <string name="hint_where">Get started, enter your address</string>
+    <string name="title_where">Where is\nyour property?</string>
+    <string name="title_add_property">Add Property</string>
 </resources>

@@ -34,4 +34,15 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    //Material
+    implementation 'com.google.android.material:material:1.3.0-alpha04'
+
+    //Support Design
+    implementation 'com.android.support:design:30.0.1'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //Dexter
+    implementation 'com.karumi:dexter:6.2.2'
 }
