@@ -9,4 +9,9 @@
         <attr name="prefix" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="SpinnerLayout">
+        <attr name="title" format="string" />
+        <attr name="selectId" format="integer" />
+    </declare-styleable>
+
 </resources>

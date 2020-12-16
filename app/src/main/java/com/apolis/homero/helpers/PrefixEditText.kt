@@ -1,11 +1,9 @@
 package com.apolis.homero.ui
 
 import android.content.Context
-import android.content.res.TypedArray
 import android.graphics.Canvas
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatEditText
-import com.apolis.homero.R
 
 class PrefixEditText(context: Context, attributes: AttributeSet) :
     AppCompatEditText(context, attributes) {

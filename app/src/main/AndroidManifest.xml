@@ -12,7 +12,7 @@
         <activity android:name=".ui.MortgageInformationActivity"></activity>
         <activity android:name=".ui.PropertyDetailActivity" />
         <activity android:name=".ui.AddPropertyActivity" />
-        <activity android:name=".ui.WherePropertyActivity" />
+        <activity android:name=".ui.LocationPropertyActivity" />
         <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.auth.RegisterActivity">
             <intent-filter>
