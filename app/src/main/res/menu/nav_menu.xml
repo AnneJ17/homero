@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/menu_login"
+            android:icon="@drawable/ic_baseline_house_24"
+            android:title="@string/menu_properties" />
+
+        <item
+            android:id="@+id/menu_profile"
+            android:icon="@drawable/ic_tenants"
+            android:title="@string/menu_tenants" />
+
+        <item
+            android:id="@+id/menu_order_summary_list"
+            android:icon="@drawable/ic_transactions"
+            android:title="@string/menu_transactions" />
+
+        <item
+            android:id="@+id/menu_rent"
+            android:icon="@drawable/ic_rent"
+            android:title="@string/menu_rent" />
+
+        <item
+            android:id="@+id/menu_todo"
+            android:icon="@drawable/ic_todo"
+            android:title="@string/menu_todo" />
+
+        <item
+            android:id="@+id/menu_trips"
+            android:icon="@drawable/ic_trips"
+            android:title="@string/menu_trips" />
+
+        <item
+            android:id="@+id/menu_doc"
+            android:icon="@drawable/ic_doc"
+            android:title="@string/menu_doc" />
+
+        <item
+            android:id="@+id/menu_vendors"
+            android:icon="@drawable/ic_vendors"
+            android:title="@string/menu_vendors" />
+
+        <item
+            android:id="@+id/menu_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/menu_logout" />
+    </group>
+
+</menu>
