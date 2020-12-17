@@ -6,12 +6,7 @@
 
     <declare-styleable name="PrefixLayout">
         <attr name="title" format="string" />
-        <attr name="prefix" format="string" />
-    </declare-styleable>
-
-    <declare-styleable name="SpinnerLayout">
-        <attr name="title" format="string" />
-        <attr name="selectId" format="integer" />
+        <attr name="prefix_prefix_layout" format="string" />
     </declare-styleable>
 
 </resources>

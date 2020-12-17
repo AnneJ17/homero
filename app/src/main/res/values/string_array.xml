@@ -14,4 +14,12 @@
         <item>Interested in buying</item>
     </string-array>
 
+    <string-array name="country_array">
+        <item>United States</item>
+        <item>India</item>
+        <item>Canada</item>
+        <item>China</item>
+        <item>Korea</item>
+    </string-array>
+
 </resources>

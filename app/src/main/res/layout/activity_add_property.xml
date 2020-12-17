@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <TextView
+        android:id="@+id/text_view_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:text="@string/title_add_property"
+        android:textColor="@color/colorBlack"
+        android:textSize="32sp" />
+
+    <ImageView
+        android:id="@+id/watermark_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="30dp"
+        android:layout_toLeftOf="@id/text_view_title"
+        android:src="@drawable/watermark_location" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/watermark_location"
+        android:orientation="vertical">
+
+        <com.apolis.homero.helpers.PrefixLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/country">
+
+            <com.apolis.homero.helpers.CustomSpinner
+                style="@style/CustomSpinnerStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/country_array" />
+        </com.apolis.homero.helpers.PrefixLayout>
+
+        <com.apolis.homero.helpers.PrefixLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:title="@string/address1">
+
+            <com.apolis.homero.helpers.PrefixEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/address1_hint" />
+        </com.apolis.homero.helpers.PrefixLayout>
+
+        <com.apolis.homero.helpers.PrefixLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:title="@string/address2">
+
+            <com.apolis.homero.helpers.PrefixEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/address2_hint" />
+        </com.apolis.homero.helpers.PrefixLayout>
+
+        <com.apolis.homero.helpers.PrefixLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:title="@string/city">
+
+            <com.apolis.homero.helpers.PrefixEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/city_hint" />
+        </com.apolis.homero.helpers.PrefixLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.apolis.homero.helpers.PrefixLayout
+                android:id="@+id/custom_view_city"
+                android:layout_width="171dp"
+                android:layout_height="wrap_content"
+                android:minWidth="171dp"
+                app:title="@string/state">
+
+                <com.apolis.homero.helpers.CustomSpinner
+                    style="@style/CustomSpinnerStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/country_array" />
+            </com.apolis.homero.helpers.PrefixLayout>
+
+            <com.apolis.homero.helpers.PrefixLayout
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_toLeftOf="@id/custom_view_city"
+                android:minWidth="121dp"
+                app:title="@string/zipcode">
+
+                <com.apolis.homero.helpers.PrefixEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/zipcode_hint" />
+            </com.apolis.homero.helpers.PrefixLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,9 +1,10 @@
-package com.apolis.homero.ui
+package com.apolis.homero.helpers
 
 import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatEditText
+import com.apolis.homero.R
 
 class PrefixEditText(context: Context, attributes: AttributeSet) :
     AppCompatEditText(context, attributes) {
@@ -12,16 +13,25 @@ class PrefixEditText(context: Context, attributes: AttributeSet) :
         private const val DEFAULT_PADDING = -1f
     }
 
-    private var defaultLeftPadding = DEFAULT_PADDING
+    private var defaultLeftPadding =
+        DEFAULT_PADDING
     private var prefix = ""
 
         // Stores the value of the property for the given object in this mutable map.
         set(value) {
             field = value
             calculatePrefix()
-            requestLayout()
-            invalidate()
+            requestLayout() // to be called when size is changed
+            invalidate() // to be called if only visual change happens
         }
+
+    init {
+        context.obtainStyledAttributes(attributes, R.styleable.PrefixEditText).let {
+
+            prefix = it.getString(R.styleable.PrefixEditText_prefix).orEmpty()
+            it.recycle()
+        }
+    }
 
     // Setter for assigning prefix within any activity or fragments programmatically
     fun assignPrefix(prefix: String) {
