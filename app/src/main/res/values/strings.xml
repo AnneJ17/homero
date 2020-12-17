@@ -31,4 +31,9 @@
     <string name="state">State*</string>
     <string name="zipcode_hint">Enter Zipcode</string>
     <string name="zipcode">Zipcode</string>
+    <string name="status">Status*</string>
+    <string name="units">Are there multiple units?</string>
+    <string name="purchase">How much did you purchase the property for?</string>
+    <string name="photo_property">Add a photo of your property</string>
+    <string name="title_property_details">Property Details</string>
 </resources>

@@ -97,7 +97,7 @@
             </com.apolis.homero.helpers.PrefixLayout>
 
             <com.apolis.homero.helpers.PrefixLayout
-                android:layout_width="121dp"
+                android:layout_width="131dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_toLeftOf="@id/custom_view_city"
