@@ -1,8 +1,16 @@
 package com.apolis.homero.helpers
 
 import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.annotation.LayoutRes
+import com.squareup.picasso.Picasso
 
 fun Context.toast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT)
@@ -10,4 +18,23 @@ fun Context.toast(message: String) {
 
 fun Context.d(message: String) {
     Log.d("Homero", message)
+}
+
+fun openActivity(context: Context, clazz: Class<*>, extras: Bundle?) {
+    val intent = Intent(context, clazz)
+    if(extras != null) {
+        intent.putExtras(extras)
+    }
+    context.startActivity(intent)
+}
+
+fun ImageView.loadImage(imageUrl: String) {
+    Picasso
+        .get()
+        .load(imageUrl)
+        .into(this)
+}
+
+fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View {
+    return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
 }
