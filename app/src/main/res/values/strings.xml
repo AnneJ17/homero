@@ -36,4 +36,6 @@
     <string name="purchase">How much did you purchase the property for?</string>
     <string name="photo_property">Add a photo of your property</string>
     <string name="title_property_details">Property Details</string>
+    <string name="mortgage">Does this property have a mortgage?</string>
+    <string name="tenant">Tenants ></string>
 </resources>

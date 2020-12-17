@@ -38,6 +38,7 @@
                 style="@style/CustomSpinnerStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:entries="@array/status_array" />
         </com.apolis.homero.helpers.PrefixLayout>
 
@@ -47,7 +48,7 @@
             android:layout_marginTop="30dp">
 
             <com.apolis.homero.helpers.PrefixLayout
-                android:layout_width="251dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 app:title="@string/units" />
@@ -82,16 +83,16 @@
         </RelativeLayout>
 
         <TextView
-            android:layout_marginTop="100dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="7dp"
-            android:paddingLeft="20dp"
+            android:layout_marginTop="100dp"
             android:background="@drawable/border_blue"
             android:drawableLeft="@drawable/ic_camera"
+            android:gravity="center"
+            android:paddingVertical="7dp"
+            android:paddingLeft="20dp"
             android:text="@string/photo_property"
-            android:textColor="@color/colorPrimary"
-            android:gravity="center"/>
+            android:textColor="@color/colorPrimary" />
 
     </LinearLayout>
 
