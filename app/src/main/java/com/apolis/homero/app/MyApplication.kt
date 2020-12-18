@@ -10,6 +10,6 @@ class MyApplication : Application() {
 
     companion object {
         var instance: MyApplication? = null
-            private set
+        var instanceEndpoints: Endpoints? = null
     }
 }

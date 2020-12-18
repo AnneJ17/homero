@@ -1,67 +1,91 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginVertical="27dp"
-        android:src="@drawable/homero_logo" />
+    <data>
+        <variable
+            name="userInfo"
+            type="com.apolis.homero.ui.auth.AuthViewModel" />
+    </data>
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="24dp"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register_label"
-            android:textColor="@color/colorBlack" />
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginVertical="27dp"
+            android:src="@drawable/homero_logo" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
-            <Spinner
-                android:id="@+id/type_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_black" />
+            android:layout_height="match_parent"
+            android:layout_margin="24dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/ic_baseline_arrow_drop_down_24" />
-        </RelativeLayout>
+                android:text="@string/register_label"
+                android:textColor="@color/colorBlack" />
 
-        <EditText
-            style="@style/CustomEditText"
-            android:background="@drawable/border_black"
-            android:hint="@string/hint_email" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
 
-        <EditText
-            style="@style/CustomEditText"
-            android:background="@drawable/border_black"
-            android:hint="@string/hint_password" />
+                <Spinner
+                    android:id="@+id/type_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_black"
+                    android:entries="@array/type_array"
+                    selectedValue="@={userInfo.type}" />
 
-        <EditText
-            style="@style/CustomEditText"
-            android:background="@drawable/border_black"
-            android:hint="@string/hint_confirm_password" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/ic_baseline_arrow_drop_down_24" />
+            </RelativeLayout>
 
-        <Button
-            style="@style/CustomButton"
-            android:background="@drawable/button"
-            android:text="@string/button_signup" />
+            <EditText
+                style="@style/CustomEditText"
+                android:background="@drawable/border_black"
+                android:hint="@string/hint_name"
+                android:text="@={userInfo.name}" />
+
+            <EditText
+                style="@style/CustomEditText"
+                android:background="@drawable/border_black"
+                android:hint="@string/hint_email"
+                android:text="@={userInfo.email}" />
+
+            <EditText
+                style="@style/CustomEditText"
+                android:background="@drawable/border_black"
+                android:hint="@string/hint_password"
+                android:text="@={userInfo.password}" />
+
+            <Button
+                style="@style/CustomButton"
+                android:background="@drawable/button"
+                android:onClick="@{userInfo::onRegisterButtonClicked}"
+                android:text="@string/button_signup" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:onClick="@{userInfo::onRedirect}"
+                android:text="@string/signinto_label"
+                android:textColor="@color/colorBlack" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</layout>

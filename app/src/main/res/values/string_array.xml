@@ -2,9 +2,9 @@
 <resources>
 
     <string-array name="type_array">
-        <item>Landlord</item>
+        <item>landlord</item>
         <item>Property-Man</item>
-        <item>Tenant</item>
+        <item>tenant</item>
         <item>Vendor</item>
     </string-array>
 

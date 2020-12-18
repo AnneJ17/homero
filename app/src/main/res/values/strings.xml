@@ -38,4 +38,19 @@
     <string name="title_property_details">Property Details</string>
     <string name="mortgage">Does this property have a mortgage?</string>
     <string name="tenant">Tenants ></string>
+    <string name="hint_name">Name</string>
+    <string name="signinto_label">Already registered? Click here</string>
+    <string name="fullName">Full Name*</string>
+    <string name="fullName_hint">Enter Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="phone_number_hint">Enter Phone Number</string>
+    <string name="email">Email</string>
+    <string name="hint_enter_email">Enter Email</string>
+    <string name="property">Property</string>
+    <string name="property_hint">Enter Property</string>
+    <string name="date">Tour Date*</string>
+    <string name="browse">Browse</string>
+    <string name="doc">Application Document</string>
+    <string name="address_manual">Enter your address manually</string>
+    <string name="search">Search</string>
 </resources>

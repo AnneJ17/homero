@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/custom_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="24dp">
+
+        <com.apolis.homero.helpers.PrefixLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:title="@string/fullName">
+
+            <com.apolis.homero.helpers.PrefixEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="@string/fullName_hint" />
+        </com.apolis.homero.helpers.PrefixLayout>
+
+        <com.apolis.homero.helpers.PrefixLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:title="@string/phone_number">
+
+            <com.apolis.homero.helpers.PrefixEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:inputType="number"
+                android:hint="@string/phone_number_hint" />
+        </com.apolis.homero.helpers.PrefixLayout>
+
+        <com.apolis.homero.helpers.PrefixLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:title="@string/email">
+
+            <com.apolis.homero.helpers.PrefixEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="@string/hint_enter_email" />
+        </com.apolis.homero.helpers.PrefixLayout>
+
+        <com.apolis.homero.helpers.PrefixLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:title="@string/property">
+
+            <com.apolis.homero.helpers.PrefixEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="@string/property_hint" />
+        </com.apolis.homero.helpers.PrefixLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.apolis.homero.helpers.PrefixLayout
+                android:id="@+id/custom_view_city"
+                android:layout_width="171dp"
+                android:layout_height="wrap_content"
+                android:minWidth="171dp"
+                app:title="@string/date">
+
+                <com.apolis.homero.helpers.CustomSpinner
+                    style="@style/CustomSpinnerStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:entries="@array/country_array" />
+            </com.apolis.homero.helpers.PrefixLayout>
+
+            <com.apolis.homero.helpers.PrefixLayout
+                android:layout_width="131dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_toLeftOf="@id/custom_view_city"
+                android:minWidth="121dp"
+                app:title="@string/doc">
+
+                <Button
+                    android:id="@+id/button_browse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/border_blue"
+                    android:text="@string/browse"
+                    android:textColor="@color/colorPrimary"
+                    android:textAllCaps="false"
+                    android:padding="7dp"/>
+            </com.apolis.homero.helpers.PrefixLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
