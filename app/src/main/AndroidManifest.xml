@@ -22,9 +22,10 @@
         </activity>
         <activity android:name=".ui.AddApplicantsActivity" />
         <activity android:name=".ui.SplashActivity">
+
         </activity>
-        <activity android:name=".ui.property.PropertyActivity"></activity>
-        <activity android:name=".ui.property.LocationPropertyActivity"></activity>
+        <activity android:name=".ui.property.PropertyActivity" />
+        <activity android:name=".ui.property.LocationPropertyActivity" />
         <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.auth.RegisterActivity" />
         <activity android:name=".ui.auth.LoginActivity" />

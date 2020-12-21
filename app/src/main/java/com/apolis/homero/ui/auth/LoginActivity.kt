@@ -5,23 +5,25 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.apolis.homero.R
 import com.apolis.homero.databinding.ActivityLoginBinding
 import com.apolis.homero.helpers.openActivity
 import com.apolis.homero.helpers.toast
 
 class LoginActivity : AppCompatActivity(), AuthListener {
+
+    lateinit var loginBinding: ActivityLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
 
         init()
     }
 
     private fun init() {
-        var loginBinding: ActivityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-        var authViewModel = ViewModelProviders.of(this).get(AuthViewModel::class.java)
+        loginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
+        var authViewModel = ViewModelProvider(this).get(AuthViewModel::class.java)
         loginBinding.user = authViewModel
         authViewModel.authListener = this
     }

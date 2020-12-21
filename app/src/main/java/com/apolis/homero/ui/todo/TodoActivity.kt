@@ -26,7 +26,7 @@ class TodoActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        database = FirebaseDatabase.getInstance().getReference("Demo")
+        database = FirebaseDatabase.getInstance().reference
         database.setValue("any value")
         Toast.makeText(this, "Here", Toast.LENGTH_SHORT).show()
         var userId = database.push().key
@@ -58,13 +58,11 @@ class TodoActivity : AppCompatActivity() {
         todoItem.itemText = itemEditText.text.toString()
         todoItem.done = false
         //We first make a push so that a new item is made with a unique ID
-        var userId = database.push()
         val newItem = database.child(ToDoItem.FIREBASE_ITEM).push()
         todoItem.itemId = newItem.key
         //then, we used the reference to set the value on that ID
         newItem.setValue(todoItem)
         dialog.dismiss()
-        d("Failed to store in db")
         toast("Item saved with ID ${todoItem.itemId}")
     }
 }
