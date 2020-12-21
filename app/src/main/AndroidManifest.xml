@@ -6,34 +6,32 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:name=".app.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.AddApplicantsActivity" />
-        <activity android:name=".ui.SplashActivity">
-        </activity>
-        <activity android:name=".ui.MortgageInformationActivity" />
-        <activity android:name=".ui.PropertyDetailActivity" />
-        <activity android:name=".ui.AddPropertyActivity" />
-        <activity android:name=".ui.LocationPropertyActivity">
+        <activity android:name=".ui.todo.TodoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.AddApplicantsActivity" />
+        <activity android:name=".ui.SplashActivity">
+        </activity>
+        <activity android:name=".ui.property.PropertyActivity"></activity>
+        <activity android:name=".ui.property.LocationPropertyActivity"></activity>
+        <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.auth.RegisterActivity" />
         <activity android:name=".ui.auth.LoginActivity" />
-        <activity android:name=".ui.MainActivity" />
 
         <service
             android:name=".data.networks.GetAddressIntentService"
             android:exported="false" />
-
     </application>
 
 </manifest>

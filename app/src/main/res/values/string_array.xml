@@ -3,9 +3,9 @@
 
     <string-array name="type_array">
         <item>landlord</item>
-        <item>Property-Man</item>
+        <item>property-Man</item>
         <item>tenant</item>
-        <item>Vendor</item>
+        <item>vendor</item>
     </string-array>
 
     <string-array name="status_array">

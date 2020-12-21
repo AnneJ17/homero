@@ -96,4 +96,13 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/button_next"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="45dp"
+        android:src="@drawable/ic_next_arrow" />
+
 </RelativeLayout>

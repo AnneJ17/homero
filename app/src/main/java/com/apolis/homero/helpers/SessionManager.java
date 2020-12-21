@@ -11,16 +11,11 @@ public class SessionManager {
     private SharedPreferences.Editor editor;
     private static SessionManager instance = null;
 
-    private static final String FILE_NAME = "my_pref";
-    private static final String KEY_USER_ID = "userID";
-    private static final String KEY_NAME = "name";
-    private static final String KEY_EMAIL = "email";
-    private static final String KEY_PASSWORD = "password";
-    private static final String KEY_IS_LOGGED_IN = "isLoggedIn";
+
 
     // Made private so that no class can instantiate this class
     private SessionManager() {
-        this.sharedPreferences =  MyApplication.Companion.getInstance().getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        this.sharedPreferences =  MyApplication.Companion.getInstance().getSharedPreferences(Constants.FILE_NAME, Context.MODE_PRIVATE);
         this.editor = sharedPreferences.edit();
     }
 
@@ -33,22 +28,22 @@ public class SessionManager {
     }
 
     public void saveUserInfo(User user) {
-        editor.putString(KEY_USER_ID, user.get_id());
-        editor.putString(KEY_NAME, user.getName());     // will need this if creating a user profile
-        editor.putString(KEY_EMAIL, user.getEmail());
-        editor.putString(KEY_PASSWORD, user.getPassword());
-        editor.putBoolean(KEY_IS_LOGGED_IN, true);
+        editor.putString(Constants.KEY_USER_ID, user.get_id());
+        editor.putString(Constants.KEY_NAME, user.getName());     // will need this if creating a user profile
+        editor.putString(Constants.KEY_EMAIL, user.getEmail());
+        editor.putString(Constants.KEY_PASSWORD, user.getPassword());
+        editor.putBoolean(Constants.KEY_IS_LOGGED_IN, true);
         editor.commit();
     }
 
     public boolean isLoggedIn() {
-        return sharedPreferences.getBoolean(KEY_IS_LOGGED_IN, false);
+        return sharedPreferences.getBoolean(Constants.KEY_IS_LOGGED_IN, false);
     }
 
     public User getUser() {
-        String id = sharedPreferences.getString(KEY_USER_ID, null);
-        String name = sharedPreferences.getString(KEY_NAME, null);
-        String email = sharedPreferences.getString(KEY_EMAIL, null);
+        String id = sharedPreferences.getString(Constants.KEY_USER_ID, null);
+        String name = sharedPreferences.getString(Constants.KEY_NAME, null);
+        String email = sharedPreferences.getString(Constants.KEY_EMAIL, null);
         User user = new User(id, name, email);
         return user;
     }
