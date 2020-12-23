@@ -1,4 +1,4 @@
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout>
 
     <data>
         <variable
@@ -40,8 +40,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border_black"
-                    android:entries="@array/type_array"
-                    selectedValue="@={userInfo.type}" />
+                    android:entries="@array/type_array" />
+<!--                selectedValue="@={userInfo.type}"-->
 
                 <TextView
                     android:layout_width="wrap_content"

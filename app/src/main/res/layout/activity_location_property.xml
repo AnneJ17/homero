@@ -28,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/watermark_location"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="7dp"
         android:text="@string/address_manual"
         android:textColor="@color/colorPrimary" />
@@ -40,20 +41,8 @@
         android:background="@drawable/border_gray"
         android:drawableLeft="@drawable/ic_location"
         android:drawablePadding="7dp"
-        android:hint="@string/hint_where" />
-
-    <Button
-        android:id="@+id/button_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edit_text_where"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/border_blue"
-        android:padding="7dp"
-        android:text="@string/search"
-        android:textAllCaps="false"
-        android:textColor="@color/colorPrimary" />
+        android:hint="@string/hint_where"
+        android:maxLines="1" />
 
     <TextView
         android:id="@+id/text_view_details"

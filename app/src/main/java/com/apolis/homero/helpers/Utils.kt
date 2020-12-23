@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.LayoutRes
+import androidx.fragment.app.Fragment
 import com.squareup.picasso.Picasso
 
 fun Context.toast(message: String) {
@@ -17,7 +18,7 @@ fun Context.toast(message: String) {
 }
 
 fun Context.d(message: String) {
-    Log.d("Homero", message)
+    Log.d("ABC", message)
 }
 
 fun openActivity(context: Context, clazz: Class<*>, extras: Bundle?) {

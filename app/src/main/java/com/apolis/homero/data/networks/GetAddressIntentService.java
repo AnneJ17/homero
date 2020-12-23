@@ -9,7 +9,7 @@ import android.os.ResultReceiver;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.apolis.homero.app.Constants;
+import com.apolis.homero.helpers.Constants;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,14 +28,11 @@ public class GetAddressIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        Log.e(TAG, "onHandleIntent");
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
         String errorMessage = "";
         List<Address> addresses = null;
 
         int fetchType = intent.getIntExtra(Constants.FETCH_TYPE_EXTRA, 0);
-        Log.e(TAG, "fetchType == " + fetchType);
-        Log.e(TAG, "fetchType == " + Constants.USE_ADDRESS_NAME);
 
         if(fetchType == Constants.USE_ADDRESS_NAME) {
             String name = intent.getStringExtra(Constants.LOCATION_NAME_DATA_EXTRA);

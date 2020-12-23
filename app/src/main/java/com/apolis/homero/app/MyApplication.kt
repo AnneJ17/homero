@@ -9,7 +9,7 @@ class MyApplication : Application() {
     }
 
     companion object {
-        var instance: MyApplication? = null
-        var instanceEndpoints: Endpoints? = null
+        lateinit var instance: MyApplication
+            private set
     }
 }

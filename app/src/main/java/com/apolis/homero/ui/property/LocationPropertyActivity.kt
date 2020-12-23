@@ -1,4 +1,4 @@
-package com.apolis.homero.ui
+package com.apolis.homero.ui.property
 
 import android.Manifest
 import android.content.Intent
@@ -7,11 +7,14 @@ import android.location.Address
 import android.os.Bundle
 import android.os.Handler
 import android.os.ResultReceiver
+import android.view.KeyEvent
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.apolis.homero.R
-import com.apolis.homero.app.Constants
+import com.apolis.homero.helpers.Constants
 import com.apolis.homero.data.networks.GetAddressIntentService
 import com.apolis.homero.helpers.d
 import com.apolis.homero.helpers.openActivity
@@ -20,11 +23,11 @@ import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
 import kotlinx.android.synthetic.main.activity_location_property.*
 
+
 class LocationPropertyActivity : AppCompatActivity() {
 
     private val REQUEST_LOCATION_CODE = 1
     var fetchType: Int = Constants.USE_ADDRESS_NAME
-    private val TAG = "LOCATION_PROPERTY_ACTIVITY"
     private var resultReceiver: AddressResultReceiver? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,14 +39,28 @@ class LocationPropertyActivity : AppCompatActivity() {
 
     private fun init() {
         resultReceiver = AddressResultReceiver(null)
-        button_search.setOnClickListener {
-            checkLocationPermission()
-            sendResult()
-        }
-        text_view_address.setOnClickListener {
-            openActivity(this, AddPropertyActivity::class.java, null)
-        }
+        onClick()
+    }
 
+    private fun onClick() {
+        text_view_address.setOnClickListener {
+            openActivity(this, PropertyActivity::class.java, null)
+        }
+        edit_text_where.setOnEditorActionListener(object : TextView.OnEditorActionListener {
+            override fun onEditorAction(view: TextView?, keyCode: Int, event: KeyEvent): Boolean {
+                if (keyCode == EditorInfo.IME_ACTION_SEARCH ||
+                    keyCode == EditorInfo.IME_ACTION_DONE ||
+                    event.action == KeyEvent.ACTION_DOWN &&
+                    event.keyCode == KeyEvent.KEYCODE_ENTER
+                ) {
+                    // Perform action on key press
+                    checkLocationPermission()
+                    sendResult()
+                    return true
+                }
+                return false
+            }
+        })
     }
 
     private fun sendResult() {
@@ -131,7 +148,11 @@ class LocationPropertyActivity : AppCompatActivity() {
             if (resultCode == Constants.SUCCESS_RESULT) {
                 val address: Address? = resultData!!.getParcelable(Constants.RESULT_ADDRESS)
                 runOnUiThread {
-                    text_view_details.text = "Latitude: ${address?.latitude} \n Longitude:${address?.longitude} \n Address: ${address?.countryName}"
+                    var bundle = Bundle()
+                    bundle.putString(Constants.RESULT_ADDRESS_EXTRA, address?.getAddressLine(0))
+                    openActivity(this@LocationPropertyActivity, PropertyActivity::class.java, bundle)
+                    text_view_details.text =
+                        "Address: ${address?.getAddressLine(0)}"
                 }
             }
         }
