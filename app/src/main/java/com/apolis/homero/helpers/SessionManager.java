@@ -32,6 +32,7 @@ public class SessionManager {
         editor.putString(Constants.KEY_NAME, user.getName());     // will need this if creating a user profile
         editor.putString(Constants.KEY_EMAIL, user.getEmail());
         editor.putString(Constants.KEY_PASSWORD, user.getPassword());
+        editor.putString(Constants.KEY_TYPE, user.getType());
         editor.putBoolean(Constants.KEY_IS_LOGGED_IN, true);
         editor.commit();
     }

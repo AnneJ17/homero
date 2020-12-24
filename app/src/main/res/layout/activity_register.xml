@@ -1,6 +1,7 @@
 <layout>
 
     <data>
+
         <variable
             name="userInfo"
             type="com.apolis.homero.ui.auth.AuthViewModel" />
@@ -30,27 +31,53 @@
                 android:text="@string/register_label"
                 android:textColor="@color/colorBlack" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
-                <Spinner
-                    android:id="@+id/type_spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_black"
-                    android:entries="@array/type_array" />
-<!--                selectedValue="@={userInfo.type}"-->
-
-                <TextView
+                <RadioButton
+                    android:id="@+id/radio_button_landlord"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerInParent="true"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/ic_baseline_arrow_drop_down_24" />
-            </RelativeLayout>
+                    android:layout_marginHorizontal="20dp"
+                    android:onClick="@{userInfo::onRadioLandlordClicked}"
+                    android:text="Landlord" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_tenant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:onClick="@{userInfo::onRadioTenantClicked}"
+                    android:text="Tenant" />
+
+            </RadioGroup>
+
+            <!--            <RelativeLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="20dp">-->
+
+            <!--                <Spinner-->
+            <!--                    android:id="@+id/type_spinner"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:background="@drawable/border_black"-->
+            <!--                    android:entries="@array/type_array" />-->
+            <!--&lt;!&ndash;                selectedValue="@={userInfo.type}"&ndash;&gt;-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_alignParentEnd="true"-->
+            <!--                    android:layout_centerInParent="true"-->
+            <!--                    android:layout_marginEnd="20dp"-->
+            <!--                    android:background="@drawable/ic_baseline_arrow_drop_down_24" />-->
+            <!--            </RelativeLayout>-->
 
             <EditText
                 style="@style/CustomEditText"
@@ -71,6 +98,7 @@
                 android:text="@={userInfo.password}" />
 
             <Button
+                android:id="@+id/button_register"
                 style="@style/CustomButton"
                 android:background="@drawable/button"
                 android:onClick="@{userInfo::onRegisterButtonClicked}"

@@ -3,7 +3,7 @@ package com.apolis.homero.ui.property
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.apolis.homero.data.models.PropertyData
-import com.apolis.homero.repositories.PropertyRepository
+import com.apolis.homero.data.repositories.PropertyRepository
 
 class PropertyViewModel : ViewModel() {
     var propertyListener: propertyListener? = null

@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingVertical="40dp">
+
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_account"
+        android:layout_marginEnd="20dp"/>
+
+    <LinearLayout
+        android:layout_toEndOf="@id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_view_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:fontFamily="@font/gotham_medium_1"/>
+
+        <TextView
+            android:id="@+id/text_view_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</RelativeLayout>

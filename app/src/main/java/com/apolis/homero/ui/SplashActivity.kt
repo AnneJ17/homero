@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.apolis.homero.R
 import com.apolis.homero.helpers.SessionManager
+import com.apolis.homero.helpers.d
 import com.apolis.homero.helpers.openActivity
 import com.apolis.homero.ui.auth.LoginActivity
 
@@ -33,8 +34,10 @@ class SplashActivity : AppCompatActivity() {
     private fun chooseStartScreen() {
         var sessionManager = SessionManager.getInstance()
         if(sessionManager.isLoggedIn) {
+            d("Main activity is chosen")
             openActivity(this, MainActivity::class.java, null)
         } else {
+            d("Login activity is chosen")
             openActivity(this, LoginActivity::class.java, null)
         }
     }

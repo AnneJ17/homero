@@ -1,8 +1,10 @@
 package com.apolis.homero.ui.auth
 
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModel
-import com.apolis.homero.repositories.AuthRepository
+import com.apolis.homero.data.models.User
+import com.apolis.homero.data.repositories.AuthRepository
 
 class AuthViewModel : ViewModel() {
     var name: String? = null
@@ -13,21 +15,34 @@ class AuthViewModel : ViewModel() {
     var authListener: AuthListener? = null
 
     fun onLoginButtonClicked(view: View) {
+        Log.d("ABC", "Inside AuthViewModel: onLoginButtonClicked")
         if(email.isNullOrEmpty()||password.isNullOrEmpty()) {
             authListener?.onFailure("Registration Failed")
             return
         }
-        var loginResponse = AuthRepository().loginUser(email!!, password!!)
+        var loginInfo = User(email = email, password = password)
+        var loginResponse = AuthRepository().loginUser(loginInfo)
         authListener?.onSuccess(loginResponse)
     }
 
     fun onRegisterButtonClicked(view: View) {
+        Log.d("ABC", "Inside AuthViewModel: onRegisterButtonClicked")
         if(name.isNullOrEmpty()||email.isNullOrEmpty()||password.isNullOrEmpty()||type.isNullOrEmpty()) {
-            authListener?.onFailure("Login Failed")
+            authListener?.onFailure("Please complete all the fields")
             return
         }
-        var registerResponse = AuthRepository().registerUser(name!!, email!!, password!!, type!!)
+        var registerInfo = User(name = name, email = email, password = password, type = type)
+        var registerResponse = AuthRepository().registerUser(registerInfo)
         authListener?.onSuccess(registerResponse)
+    }
+
+    fun onRadioLandlordClicked(view: View){
+        Log.d("ABC", "Landlord clicked")
+        type = "landlord"
+    }
+    fun onRadioTenantClicked(view: View){
+        Log.d("ABC", "Tenant clicked")
+        type = "tenant"
     }
 
     fun onRedirect(view: View) {

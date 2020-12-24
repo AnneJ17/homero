@@ -43,10 +43,11 @@
                 android:text="@={user.password}"/>
 
             <Button
+                android:id="@+id/button_login"
                 style="@style/CustomButton"
                 android:background="@drawable/button"
                 android:text="@string/button_signin"
-                android:onClick="@{user::onLoginButtonClicked"/>
+                android:onClick="@{user::onLoginButtonClicked}"/>
 
             <TextView
                 android:layout_width="wrap_content"

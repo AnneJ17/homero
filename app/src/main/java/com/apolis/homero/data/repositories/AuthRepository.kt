@@ -1,5 +1,6 @@
-package com.apolis.homero.repositories
+package com.apolis.homero.data.repositories
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.apolis.homero.data.models.LoginResponse
@@ -11,9 +12,10 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class AuthRepository {
-    fun loginUser(email: String, password: String): LiveData<String> {
-        var user = User(email = email, password = password)
-        val loginResponse = MutableLiveData<String>()
+    fun loginUser(user: User): LiveData<User> {
+        Log.d("ABC", "Inside AuthRepository: registerUser")
+        var user = User(email = user.email, password = user.password)
+        val loginResponse = MutableLiveData<User>()
         PropertyManagementApi().loginUser(user)
             .enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(
@@ -21,19 +23,21 @@ class AuthRepository {
                     response: Response<LoginResponse>
                 ) {
                     if (response.isSuccessful) {
-                        loginResponse.value = response.message()
+                        loginResponse.value = response.body()?.user
+                        Log.d("ABC", loginResponse.value.toString())
                     }
                 }
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                    loginResponse.value = t.message
+                    Log.d("ABC", t.message.toString())
                 }
             })
         return loginResponse
     }
 
-    fun registerUser(name: String, email: String, password: String, type: String): LiveData<String> {
-        var user = User(name = name, email = email, password = password, type = type)
-        val registerResponse = MutableLiveData<String>()
+    fun registerUser(user: User): LiveData<User> {
+        Log.d("ABC", "Inside AuthRepository: registerUser")
+        var user = User(name = user.name, email = user.email, password = user.password, type = user.type)
+        val registerResponse = MutableLiveData<User>()
         PropertyManagementApi().registerUser(user)
             .enqueue(object : Callback<RegisterResponse> {
                 override fun onResponse(
@@ -41,11 +45,12 @@ class AuthRepository {
                     response: Response<RegisterResponse>
                 ) {
                     if(response.isSuccessful) {
-                        registerResponse.value = response.message()
+                        registerResponse.value = response.body()?.data
+                        Log.d("ABC", registerResponse.value.toString())
                     }
                 }
                 override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
-                    registerResponse.value = t.message
+                    Log.d("ABC", t.message.toString() + " Inside registerUser()")
                 }
 
             })

@@ -1,4 +1,4 @@
-package com.apolis.homero.repositories
+package com.apolis.homero.data.repositories
 
 import android.util.Log.d
 import androidx.lifecycle.MutableLiveData

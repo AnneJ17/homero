@@ -3,17 +3,17 @@
 
     <group>
         <item
-            android:id="@+id/menu_login"
+            android:id="@+id/menu_properties"
             android:icon="@drawable/ic_baseline_house_24"
             android:title="@string/menu_properties" />
 
         <item
-            android:id="@+id/menu_profile"
+            android:id="@+id/menu_tenants"
             android:icon="@drawable/ic_tenants"
             android:title="@string/menu_tenants" />
 
         <item
-            android:id="@+id/menu_order_summary_list"
+            android:id="@+id/menu_transactions"
             android:icon="@drawable/ic_transactions"
             android:title="@string/menu_transactions" />
 
